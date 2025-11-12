@@ -7,24 +7,29 @@ A super simple FastAPI application that allows students to view and sign up for 
 - View all available extracurricular activities
 - Sign up for activities
 
-## Getting Started
+## Getting Started (with persistent DB)
 
 1. Install the dependencies:
 
-   ```
-   pip install fastapi uvicorn
-   ```
+```bash
+pip install -r requirements.txt
+```
 
-2. Run the application:
+2. Seed the database (this will create `activities.db` and insert sample activities):
 
-   ```
-   python app.py
-   ```
+```bash
+python scripts/seed_db.py
+```
 
-3. Open your browser and go to:
+3. Run the application (use uvicorn):
+
+```bash
+uvicorn src.app:app --reload
+```
+
+4. Open your browser and go to:
    - API documentation: http://localhost:8000/docs
    - Alternative documentation: http://localhost:8000/redoc
-
 ## API Endpoints
 
 | Method | Endpoint                                                          | Description                                                         |
